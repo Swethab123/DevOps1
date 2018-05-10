@@ -9,8 +9,9 @@
     
        
         <div class="container">
+     <c:url var="url" value="/payment"></c:url>
         
-<form:form action="${url }" modelAttribute="order">
+<form:form action="${url}" modelAttribute="order">
             <div class="row">
 
                              <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
@@ -83,6 +84,7 @@
                                     </td>
                                     <td class="text-center text-danger">
                                         <h4><strong>Rs. ${order.grandTotal}</strong></h4>
+                                        <button type="submit" >Buy</button>
                                     </td>
                                 </tr>
 
@@ -96,8 +98,7 @@
                     </div>
              
             </div>
-            
-            </form:form>
+</form:form>
         </div>
         </div>
         </div>

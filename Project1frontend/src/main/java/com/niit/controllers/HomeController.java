@@ -13,13 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.model.CartItem;
+import com.niit.model.Product;
 import com.niit.model.User;
 import com.niit.services.CartItemService;
+import com.niit.services.ProductService;
 
 @Controller
 public class HomeController {
 	@Autowired
 	private CartItemService cartItemService;
+	
+	@Autowired
+	private ProductService productService;
 public HomeController(){
 	System.out.println("HomeController bean is created");
 }
@@ -28,12 +33,14 @@ public HomeController(){
 //It can handle the request "http://localhost:8080/project1frontend/home -> DispatcherServlet -> "home"->
 // /WEB-INF/views/home.jsp
 @RequestMapping(value="/home")
-public String getHomePage(HttpSession session,@AuthenticationPrincipal Principal principal){
+public String getHomePage(HttpSession session,Model m,@AuthenticationPrincipal Principal principal){
 	if(principal!=null){
 	User user=cartItemService.getUser(principal.getName());
 	List<CartItem> cartItems=user.getCartItems();
 	session.setAttribute("cartSize", cartItems.size());
     }
+	List<Product> prods=productService.getAllProducts();
+	m.addAttribute("productsAttr",prods );
 	return "home";
 }
 

@@ -8,6 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  </style>
 <div class="container-fluid">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->

@@ -45,6 +45,7 @@ private ProductService productService;
 				cartItemService.saveOrUpdateCartItem(cartItem);//update
 				return "redirect:/cart/purchasedetails";
 			}
+			
 		}
 		
 	    CartItem cartItem=new CartItem();

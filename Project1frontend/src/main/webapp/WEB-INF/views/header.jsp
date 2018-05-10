@@ -11,8 +11,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://localhost:8080/Project1frontend/resources/css/table.css">
-<link rel="stylesheet" href="http://localhost:8080/Project1frontend/resources/css/navbar.css">
+<link rel="stylesheet" href="http://localhost:8088/Project1frontend/resources/css/table.css">
+<link rel="stylesheet" href="http://localhost:8088/Project1frontend/resources/css/navbar.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
@@ -54,8 +54,9 @@
 				controller returns ModelAndView [model is List<Product>,view is productlist]
 				/WEB-INF/views/productlist.jsp
 				 -->
-				<li><a href='<c:url value="/all/getproducts"></c:url>'>Browse All Products</a></li>
 				 <security:authorize access="hasRole('ROLE_ADMIN')">
+				<li><a href='<c:url value="/all/getproducts"></c:url>'>Browse All Products</a></li>
+				 
 				<li><a href='<c:url value="/admin/getproductform"></c:url>'>Add Product</a></li>
 				</security:authorize>
 				<li class="dropdown">
@@ -69,6 +70,8 @@
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=Furniture"></c:url>'>Furniture</a>
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=Education"></c:url>'>Education</a>
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=Toys"></c:url>'>Toys</a>
+					   <a href='<c:url value="/all/searchbycategory?searchCondition=Clothings"></c:url>'>Clothings</a>
+					   <a href='<c:url value="/all/searchbycategory?searchCondition=Fashion"></c:url>'>Fashion</a>
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=All"></c:url>'>All</a>
                     </li>
 			</ul>
